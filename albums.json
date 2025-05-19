@@ -1,0 +1,119 @@
+[
+  {
+    "folder": "songs/Angry",
+    "title": "Angry Playlist",
+    "description": "Angry Songs",
+    "cover": "songs/Angry/cover.jpg",
+    "songs": [
+      "NF - Warm Up - NFVEVO.mp3",
+      "XXXTENTACION - Look At Me.mp3"
+    ]
+  },
+  {
+    "folder": "songs/Chill",
+    "title": "Chill Beats",
+    "description": "Relaxing chillout tracks",
+    "cover": "songs/chill/cover.jpg",
+    "songs": [
+      "Makhna - Chill.mp3",
+      "yung kai - Chill2.mp3"
+    ]
+  },
+  {
+    "folder": "songs/Bright",
+    "title": "Bright Beats",
+    "description": "Relaxing Bright tracks",
+    "cover": "songs/Bright/cover.jpg",
+    "songs": [
+      "Imagine Dragons - Believer.mp3",
+      "Danger.mp3",
+      "Katy Perry.mp3",
+      "NEONI.mp3"
+    ]
+  },
+  {
+    "folder": "songs/cs",
+    "title": "Happy Hits",
+    "description": "Happy Hits songs For You",
+    "cover": "songs/cs/cover.jpg",
+    "songs": [
+      "Cyndi Lauper  Happy.mp3",
+      "Kashmir Main Tu Kanyakumari Happy2.mp3"
+    ]
+  },
+   {
+    "folder": "songs/Dark",
+    "title": "Sad Songs",
+    "description": "Sad Songs for Broken People",
+    "cover": "songs/Dark/cover.jpg",
+    "songs": [
+      "Ae Dil Hai Mushkil Title Track.mp3",
+      "Bhula Dena Aashiqui 2.mp3",
+      "Broken Angle.mp3",
+      "Dil  Ek Villain Returns.mp3",
+      "Hai Dil Ye Mera Full Song  Arijit Singh  Hate Story 2.mp3",
+      "Finding Her.mp3",
+      "Kaun-Tujhe.mp3",
+      "Maand - Bayaan, Hasan Raheem, Rovalio.mp3",
+      "Mujhe Peene Do - Darshan Raval.mp3",
+      "Nahin Milta - Bayaan.mp3",
+      "Pal Pal.mp3",
+      "Sorry Dipannita.mp3",
+      "Zihaal e Miskin  Javed-Mohsin.mp3",
+      "লাল শাড়ী পরিয়া কন্যা  SHOHAG.mp3",
+      "Hamari Adhuri Kahani.mp3"
+    ]
+  },
+    {
+    "folder": "songs/Fossils",
+    "title": "Fossils Songs",
+    "description": "Fossils Rupam Islam Hits",
+    "cover": "songs/Fossils/cover.jpg",
+    "songs": [
+      "Fossils Best Playlist.mp3"
+    ]
+  },
+    {
+    "folder": "songs/Funky",
+    "title": "Funky Music",
+    "description": "Funky Music for Funky Mood",
+    "cover": "songs/Funky/cover.jpg",
+    "songs": [
+      "ATLXS phonk.mp3",
+      "COLD  NEFFEX .mp3",
+      "Despacito Justin Bieber.mp3",
+      "Fearless -TULE.mp3",
+      "Matushka  phonk2.mp3",
+      "Taki Taki 8D Audio.mp3",
+      "Trapped in My Mind.mp3 "
+    ]
+  },
+    {
+    "folder": "songs/Love",
+    "title": "Romantic Songs",
+    "description": "Love songs for Romantic Couple",
+    "cover": "songs/Love/cover.jpg",
+    "songs": [
+      "Ae Dil Hai Mushkil Title Track.mp3",
+      "Bhula Dena Aashiqui 2.mp3",
+      "Finding Her.mp3",
+      "Hai Dil Ye Mera Full Song  Arijit Singh  Hate Story 2.mp3",
+      "Jab-Tak.mp3",
+      "Maand  - Bayaan, Hasan Raheem, Rovalio.mp3",
+      "Paro Adityarikhari.mp3",
+      "Tu Hi a Mujhko Bata De.mp3",
+      "WAJAH TUM HO.mp3"
+    ]
+  },
+   {
+    "folder": "songs/Night",
+    "title": "Sleep Songs",
+    "description": "Songs For Sleep in Night Peacfully",
+    "cover": "songs/Night/cover.jpg",
+    "songs": [
+      "Lost in Your Mind Alan Walker.mp3",
+      "Sleeping At Last.mp3",
+      "Faded.mp3"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-alert("Spotify Clone-Web Music Player.This is a Project, Thank You♥");
+alert("Spotify Clone-Web Music Player.This is a Project with limited Songs, Thank You♥");
 
 const cardContainer = document.querySelector(".cardContainer");
 const songListUl = document.querySelector(".songList ul");

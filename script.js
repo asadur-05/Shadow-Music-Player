@@ -72,37 +72,45 @@ function playMusic(index) {
   currentIndex = index;
   currentSong.src = `/${currFolder}/${songs[currentIndex]}`;
   currentSong.play();
+
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: songs[currentIndex],
+      artist: "Unknown Artist", // Optional
+      album: currFolder,
+      artwork: [
+        {
+          src:
+            albums.find((a) => a.folder === currFolder)?.cover || "default.jpg",
+          sizes: "512x512",
+          type: "image/jpeg",
+        },
+      ],
+    });
+
+    navigator.mediaSession.setActionHandler("play", () => {
+      currentSong.play();
+      updatePlayPauseIcon(true);
+    });
+
+    navigator.mediaSession.setActionHandler("pause", () => {
+      currentSong.pause();
+      updatePlayPauseIcon(false);
+    });
+
+    navigator.mediaSession.setActionHandler("previoustrack", () => {
+      if (currentIndex > 0) playMusic(currentIndex - 1);
+    });
+
+    navigator.mediaSession.setActionHandler("nexttrack", () => {
+      if (currentIndex < songs.length - 1) playMusic(currentIndex + 1);
+    });
+  }
+
   document.querySelector(".songinfo").textContent = songs[currentIndex];
   updatePlayPauseIcon(true);
   
-  if ("mediaSession" in navigator) {
-  navigator.mediaSession.metadata = new MediaMetadata({
-    title: songs[currentIndex],
-    artist: "Unknown Artist", // Optional
-    album: currFolder,
-    artwork: [
-      { src: albums.find(a => a.folder === currFolder)?.cover || "default.jpg", sizes: "512x512", type: "image/jpeg" }
-    ]
-  });
-
-  navigator.mediaSession.setActionHandler("play", () => {
-    currentSong.play();
-    updatePlayPauseIcon(true);
-  });
-
-  navigator.mediaSession.setActionHandler("pause", () => {
-    currentSong.pause();
-    updatePlayPauseIcon(false);
-  });
-
-  navigator.mediaSession.setActionHandler("previoustrack", () => {
-    if (currentIndex > 0) playMusic(currentIndex - 1);
-  });
-
-  navigator.mediaSession.setActionHandler("nexttrack", () => {
-    if (currentIndex < songs.length - 1) playMusic(currentIndex + 1);
-  });
-}
+  
 
 
   // Highlight playing song

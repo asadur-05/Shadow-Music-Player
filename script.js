@@ -1,4 +1,7 @@
-alert("Spotify Clone-Web Music Player.This is a Project with limited Songs, Thank You♥");
+
+
+alert("Spotify Clone-Web Music Player with Limited Songs.This is a Project,Thank You♥");
+
 
 const cardContainer = document.querySelector(".cardContainer");
 const songListUl = document.querySelector(".songList ul");
@@ -43,15 +46,26 @@ function loadSongs(albumIndex) {
   currFolder = album.folder;
   currentIndex = 0;
 
+  // Update album info on right panel (optional)
+  document.querySelector(".album-title").textContent = album.title;
+  document.querySelector(".album-description").textContent = album.description;
+
+  // Clear old song list
   songListUl.innerHTML = "";
+
+  // Create song list
   songs.forEach((song, i) => {
     const li = document.createElement("li");
     li.textContent = song;
+    li.dataset.index = i; // ⭐️ Step 1: Add this line
     li.addEventListener("click", () => playMusic(i));
     songListUl.appendChild(li);
   });
-  playMusic(0);
+
+  playMusic(0); // Auto play first song
 }
+
+
 
 function playMusic(index) {
   if (index < 0 || index >= songs.length) return;
@@ -60,7 +74,50 @@ function playMusic(index) {
   currentSong.play();
   document.querySelector(".songinfo").textContent = songs[currentIndex];
   updatePlayPauseIcon(true);
+  
+  if ("mediaSession" in navigator) {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: songs[currentIndex],
+    artist: "Unknown Artist", // Optional
+    album: currFolder,
+    artwork: [
+      { src: albums.find(a => a.folder === currFolder)?.cover || "default.jpg", sizes: "512x512", type: "image/jpeg" }
+    ]
+  });
+
+  navigator.mediaSession.setActionHandler("play", () => {
+    currentSong.play();
+    updatePlayPauseIcon(true);
+  });
+
+  navigator.mediaSession.setActionHandler("pause", () => {
+    currentSong.pause();
+    updatePlayPauseIcon(false);
+  });
+
+  navigator.mediaSession.setActionHandler("previoustrack", () => {
+    if (currentIndex > 0) playMusic(currentIndex - 1);
+  });
+
+  navigator.mediaSession.setActionHandler("nexttrack", () => {
+    if (currentIndex < songs.length - 1) playMusic(currentIndex + 1);
+  });
 }
+
+
+  // Highlight playing song
+  const allLis = songListUl.querySelectorAll("li");
+  allLis.forEach((li) => {
+    if (parseInt(li.dataset.index) === currentIndex) {
+      li.innerHTML = `🔊 ${songs[currentIndex]}`;
+      li.classList.add("playing");
+    } else {
+      li.textContent = songs[li.dataset.index];
+      li.classList.remove("playing");
+    }
+  });
+}
+
 
 // Update album info section on right side
 function updateAlbumInfo(index) {

@@ -337,6 +337,11 @@ body {
   margin: 15px 30px;
 }
 
+.playing {
+  font-weight: bold;
+  color: #1db954; /* Spotify green */
+}
+
 
 @media (max-width: 1200px) {
     .left {
